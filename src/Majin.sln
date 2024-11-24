@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majin", "Majin.csproj", "{243C0DCF-4DFD-44AF-96DB-0B1E8DB30480}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{243C0DCF-4DFD-44AF-96DB-0B1E8DB30480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{243C0DCF-4DFD-44AF-96DB-0B1E8DB30480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{243C0DCF-4DFD-44AF-96DB-0B1E8DB30480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{243C0DCF-4DFD-44AF-96DB-0B1E8DB30480}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEFAB88F-586B-4E70-9823-8869424AAB25}
+	EndGlobalSection
+EndGlobal

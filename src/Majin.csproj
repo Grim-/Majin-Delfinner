@@ -74,9 +74,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompProperties_MajinAbsorb.cs" />
+    <Compile Include="AbilityTier_MajinKIBeam.cs" />
+    <Compile Include="CompProperties_StoredPawn.cs" />
+    <Compile Include="HediffCompProperties_MajinRegeneration.cs" />
     <Compile Include="Hediff_MajinAbsorbption.cs" />
+    <Compile Include="KIAbility_MajinAbsorb.cs" />
+    <Compile Include="KIAbility_MajinExplode.cs" />
     <Compile Include="MajinDefOf.cs" />
+    <Compile Include="MajinProjectile.cs" />
+    <Compile Include="MajinUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

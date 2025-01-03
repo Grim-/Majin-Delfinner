@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaranMagicFramework;
 using Verse;
+using AbilityDef = TaranMagicFramework.AbilityDef;
 
 namespace Majin
 {
@@ -13,5 +15,11 @@ namespace Majin
     {
         public static PawnKindDef SR_MajinPlayerBase;
         public static HediffDef SR_AbsorptionHediff;
+
+
+        public static ThingDef MajinCandy;
+        public static ThingDef MajinBeamProjectile;
+
+        public static AbilityDef MJ_CandyBeam;
     }
 }

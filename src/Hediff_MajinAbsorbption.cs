@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using SaiyanMod;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Majin
 {
     public class Hediff_MajinAbsorbption : HediffWithComps
     {
-        private int AbsorbCounter = 0;
-        private List<string> AbsorbedNames = new List<string>();
+        private List<Pawn> AbsorbedPawns = new List<Pawn>();
 
         public override string Description
         {
@@ -17,19 +19,19 @@ namespace Majin
                 StringBuilder description = new StringBuilder(base.Description);
                 description.AppendLine("\n\nAbsorbed beings:");
 
-                if (AbsorbedNames == null || AbsorbedNames.Count == 0)
+                if (AbsorbedPawns == null || AbsorbedPawns.Count == 0)
                 {
                     description.AppendLine("None... yet.");
                     return description.ToString();
                 }
 
-                if (AbsorbedNames.Count <= 20)
+                if (AbsorbedPawns.Count <= 20)
                 {
-                    description.AppendLine(string.Join("\n", AbsorbedNames));
+                    description.AppendLine(string.Join("\n", AbsorbedPawns));
                 }
                 else
                 {
-                    description.AppendLine(string.Join("\n", AbsorbedNames.Take(20)));
+                    description.AppendLine(string.Join("\n", AbsorbedPawns.Take(20)));
                     description.AppendLine("...and countless others lost to the void.");
                 }
 
@@ -42,10 +44,36 @@ namespace Majin
             this.Severity += Amount;
         }
 
-        public void RecordAbsorbption(string PawnName)
+        public void RecordAbsorbption(Pawn PawnToAbsorb)
         {
-            this.AbsorbCounter++;
-            AbsorbedNames.Add(PawnName);
+            AbsorbedPawns.Add(PawnToAbsorb);     
+
+            float severity = 1;
+            if (PawnToAbsorb.TryGetKiAbilityClass(out AbilityClassKI abilityClassKI))
+            {
+                severity += 1;
+            }
+            IncreaseSeverity(severity);
+
+            PawnToAbsorb.SafeMoveToWorld();
+        }
+
+
+        public void ReleaseAllPawns()
+        {
+            foreach (var item in AbsorbedPawns.ToList())
+            {
+                ReleaseAbsorbedPawn(item);
+            }
+        }
+
+        public void ReleaseAbsorbedPawn(Pawn Pawn)
+        {
+            if (AbsorbedPawns.Contains(Pawn))
+            {
+                Pawn.SafeReturnToMap(this.pawn.Map, this.pawn.Position);
+                AbsorbedPawns.Remove(Pawn);
+            }
         }
 
         public void ReduceSeverity(float Amount)
@@ -57,10 +85,10 @@ namespace Majin
         public override void ExposeData()
         {
             base.ExposeData();
-
-            Scribe_Values.Look(ref AbsorbCounter, "absorbCounter", 0);
-            Scribe_Collections.Look(ref AbsorbedNames, "absorbedNames");
+            Scribe_Collections.Look(ref AbsorbedPawns, "absorbedPawns");
         }
 
     }
+
+
 }

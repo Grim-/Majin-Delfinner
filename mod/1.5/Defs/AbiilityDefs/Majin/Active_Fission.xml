@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_Fission</defName>
+		<label>Fission</label>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_Fission_Tier1</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_Fission_Tier1</defName>
+		<label>Fission</label>
+		<acquireRequirement>
+			<skillPointsToUnlock>12</skillPointsToUnlock>
+		</acquireRequirement>
+		<effectRadius>5</effectRadius>
+		<energyCost>50</energyCost>
+		<cooldownTicks>3600</cooldownTicks>
+		<iconTexPath>UI/Buttons/Absorption</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+
+</Defs>

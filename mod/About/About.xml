@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>The Saiyans - Majinn</name>
+<description>Adds Majin to The Saiyans</description>
+      <author>Delfinner</author>
+      <supportedVersions>
+                  <li>1.5</li>
+      </supportedVersions>
+      <packageId>delfinner.com.majin</packageId>
+  </ModMetaData>

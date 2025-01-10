@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>SR_ExtinctionKIBlast</defName>
+    <label>KI Blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/KiBlastProjectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>SR_KIBlastDamage</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  	<ThingDef ParentName="BaseBullet">
+  		<defName>SR_MajinKI_BlastI</defName>
+  		<label>KI Blast</label>
+  		<graphicData>
+  			<texPath>Things/Projectile/KiBlastProjectile</texPath>
+  			<graphicClass>Graphic_Single</graphicClass>
+  		</graphicData>
+  		<projectile>
+  			<damageDef>SR_KIBlastDamage</damageDef>
+  			<damageAmountBase>15</damageAmountBase>
+  			<stoppingPower>1</stoppingPower>
+  			<armorPenetrationBase>0.35</armorPenetrationBase>
+  			<speed>55</speed>
+  		</projectile>
+  	</ThingDef>
+    <ThingDef ParentName="BaseBullet">
+      <defName>SR_MajinKI_BlastII</defName>
+      <label>KI Blast</label>
+      <graphicData>
+        <texPath>Things/Projectile/KiBlastProjectile</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+      </graphicData>
+      <projectile>
+        <damageDef>SR_KIBlastDamage</damageDef>
+        <damageAmountBase>15</damageAmountBase>
+        <stoppingPower>1</stoppingPower>
+        <armorPenetrationBase>0.35</armorPenetrationBase>
+        <speed>55</speed>
+      </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+      <defName>SR_MajinKI_BlastIII</defName>
+      <label>KI Blast</label>
+      <graphicData>
+        <texPath>Things/Projectile/KiBlastProjectile</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+      </graphicData>
+      <projectile>
+        <damageDef>SR_KIBlastDamage</damageDef>
+        <damageAmountBase>15</damageAmountBase>
+        <stoppingPower>1</stoppingPower>
+        <armorPenetrationBase>0.35</armorPenetrationBase>
+        <speed>55</speed>
+      </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+      <defName>SR_HumanEradicationBlast</defName>
+      <label>KI Blast</label>
+      <graphicData>
+        <texPath>Things/Projectile/KiBlastProjectile</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+      </graphicData>
+      <projectile>
+        <damageDef>SR_KIBlastDamage</damageDef>
+        <damageAmountBase>15</damageAmountBase>
+        <stoppingPower>1</stoppingPower>
+        <armorPenetrationBase>0.35</armorPenetrationBase>
+        <speed>55</speed>
+      </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="SR_KIBeamBase">
+      <defName>MajinBeamProjectile</defName>
+      <label>KI Bomb</label>
+      <graphicData>
+        <texPath>Animations/Ki_SuperBeamProjectile</texPath>
+        <graphicClass>TaranMagicFramework.Graphic_Animation</graphicClass>
+      </graphicData>
+      <projectile>
+        <damageAmountBase>90</damageAmountBase>
+        <armorPenetrationBase>2</armorPenetrationBase>
+        <speed>100</speed>
+        <explosionRadius>8</explosionRadius>
+        <explosionDelay>0</explosionDelay>
+      </projectile>
+    </ThingDef>
+</Defs>

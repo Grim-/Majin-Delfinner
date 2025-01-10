@@ -13,13 +13,13 @@ namespace Majin
     [DefOf]
     public class MajinDefOf
     {
-        public static PawnKindDef SR_MajinPlayerBase;
+        public static PawnKindDef SR_MajinRace;
         public static HediffDef SR_AbsorptionHediff;
 
 
         public static ThingDef MajinCandy;
         public static ThingDef MajinBeamProjectile;
 
-        public static AbilityDef MJ_CandyBeam;
+        public static AbilityDef SR_CandyBeam;
     }
 }

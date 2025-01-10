@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TaranMagicFramework.AbilityTabDef[defName="SR_KiTab"]/abilityClasses</xpath>
+    <value>
+      <li>SR_MajinClass</li>
+    </value>
+  </Operation>
+</Patch>

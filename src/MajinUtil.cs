@@ -25,6 +25,11 @@ namespace Majin
         {
             if (pawn.Map != null && !Find.WorldPawns.Contains(pawn))
             {
+                if (pawn.Spawned)
+                {
+                    pawn.DeSpawn();
+                }
+
                 Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
             }
         }

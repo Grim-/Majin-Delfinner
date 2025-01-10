@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_MajinKamehameha</defName>
+		<label>MajinKamehameha</label>
+		<uiSkillIcon>UI/Icons/KIBeam</uiSkillIcon>
+		 <hidden>true</hidden>
+		<unlockedWhenMastered>
+		    <li>SR_SuperMajin</li>
+		</unlockedWhenMastered>
+  		<visibleWhenActive>
+  		<li>SR_SuperMajin</li>
+  		</visibleWhenActive>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTier_SuperKIBeam">SR_MajinKamehameha_Tier1</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+  
+	<SaiyanMod.AbilityTier_SuperKIBeam>
+		<defName>SR_MajinKamehameha_Tier1</defName>
+		<label>Majin Kamehameha</label>
+		<description>Copycat.</description>
+		<soundOnCast>SR_KiBeam</soundOnCast>
+		<energyCost>65</energyCost>
+		<cooldownTicks>30000</cooldownTicks>
+		<effectRadius>30</effectRadius>
+		<iconTexPath>UI/Buttons/KIBeam</iconTexPath>
+	</SaiyanMod.AbilityTier_SuperKIBeam>
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_CandyBeam</defName>
+		<label>Candy Beam</label>
+		<uiSkillIcon>UI/Icons/KIBeam</uiSkillIcon>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_CandyBeam_Tier1</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_CandyBeam_Tier1</defName>
+		<label>Candy Beam</label>
+		<description>Convert your opponent to a snack with a well-timed beam attack!</description>
+		<soundOnCast>SR_KiBeam</soundOnCast>
+		<energyCost>80</energyCost>
+		<acquireRequirement>
+			<skillPointsToUnlock>10</skillPointsToUnlock>
+		</acquireRequirement>
+		<cooldownTicks>30000</cooldownTicks>
+		<effectRadius>5</effectRadius>
+		<iconTexPath>UI/FoodBeam</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+</Defs>

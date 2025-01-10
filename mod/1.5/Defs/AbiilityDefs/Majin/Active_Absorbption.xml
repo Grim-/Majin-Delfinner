@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_Absorption</defName>
+		<label>Absorption</label>
+		<abilityClass>Majin.KIAbility_MajinAbsorb</abilityClass>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTier_MajinAbsorb">SR_Absorption_Tier1</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+
+	<Majin.AbilityTier_MajinAbsorb>
+		<defName>SR_Absorption_Tier1</defName>
+		<label>Absorption</label>
+		<acquireRequirement>
+			<skillPointsToUnlock>12</skillPointsToUnlock>
+		</acquireRequirement>
+		<effectRadius>5</effectRadius>
+		<energyCost>50</energyCost>
+		<cooldownTicks>3600</cooldownTicks>
+		<iconTexPath>UI/MajinRegenBlob</iconTexPath>
+	</Majin.AbilityTier_MajinAbsorb>
+
+  <HediffDef>
+    <defName>SR_AbsorptionHediff</defName>
+    <label>majin absorption</label>
+    <description>This being has absorbed others into their form, gaining power from each absorption. The more powerful the being absorbed, the greater the power gained.</description>
+    <hediffClass>Majin.Hediff_MajinAbsorbption</hediffClass>
+    <defaultLabelColor>(206, 255, 237)</defaultLabelColor>
+    <isBad>false</isBad>
+    <initialSeverity>0</initialSeverity>
+    <maxSeverity>999999</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+
+    <stages>
+      <li>
+        <label>weakling absorber</label>
+        <minSeverity>0</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>0.05</MeleeDodgeChance>
+          <MeleeHitChance>0.05</MeleeHitChance>
+        </statOffsets>
+      </li>
+      <li>
+        <label>moderate absorber</label>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>0.10</MeleeDodgeChance>
+          <MeleeHitChance>0.10</MeleeHitChance>
+          <MoveSpeed>0.10</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>major absorber</label>
+        <minSeverity>10</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>0.15</MeleeDodgeChance>
+          <MeleeHitChance>0.15</MeleeHitChance>
+          <MoveSpeed>0.20</MoveSpeed>
+          <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+        </statOffsets>
+      </li>
+      <li>
+        <label>ultimate absorber</label>
+        <minSeverity>20</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>0.25</MeleeDodgeChance>
+          <MeleeHitChance>0.25</MeleeHitChance>
+          <MoveSpeed>0.30</MoveSpeed>
+          <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

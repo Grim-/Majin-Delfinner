@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  	<TaranMagicFramework.AbilityDef ParentName="SR_SuperMajinKISkill"> <!-- Change the ParentName -->
+  		<defName>SR_HeroicMajin</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+  		<label>Heroic Majin</label> <!-- The in game name that will be shown when your cursor hover on the skill icon -->
+  		<uiSkillIcon>UI/Buttons/SuperSaiyan</uiSkillIcon> <!-- Texture path to your skill icons -->
+  		<abilityTiers>
+  			<li Class="SaiyanMod.AbilityTierKIDef">SR_HeroicMajin_Tier1</li> <!-- should contain all the skill tier listed below this def. -->
+  		</abilityTiers>
+  	</TaranMagicFramework.AbilityDef>
+
+  	<SaiyanMod.AbilityTierKIDef>
+  		<defName>SR_HeroicMajin_Tier1</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+  		<label>Heroic Majin</label> <!-- The ingame name that will be shown when your cursor hover on the skill icon, any string is fine -->
+  		<description>Pawn gains an absurd power boost as they tap into something beyond their usual limits.</description>
+  		<glowProps>
+  			<glowColor>70, 143, 162</glowColor>
+  			<glowRadius>4</glowRadius>
+  		</glowProps>
+  		<overlayProps>
+  			<overlay>SR_PowerUpOverlay</overlay> <!-- This is where you change the effect of the Ki aura, new overlay with custom color can be added in Animation def, subjectible to The Saiyans Rework which may change this -->
+  			<scale>1.3</scale>
+  			<duration>900</duration>
+  		</overlayProps>
+  		<regenRate>0.08</regenRate>
+  		<isLearnable>false</isLearnable>
+  		<soundOnCast>SR_SuperSaiyan</soundOnCast> <!-- you can keep it like this, or change it to fart sound, need to add new sound def if you has a custom transformation sound -->
+  		<energyCost>35</energyCost>
+  		<cooldownTicks>1</cooldownTicks>
+  			<iconTexPath>UI/MajinRegenBlob</iconTexPath> <!-- Texture path to your skill icons -->
+  	</SaiyanMod.AbilityTierKIDef>
+</Defs>

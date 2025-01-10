@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TaranMagicFramework.AbilityDef ParentName="SR_BasicMajinKISkill">
+		<defName>SR_MajinKIBlast</defName>
+		<label>KI Blast</label>
+		<uiSkillIcon>UI/Buttons/MajinKiBlast</uiSkillIcon>
+		<abilityClass>SaiyanMod.KIAbility_KIBlast</abilityClass>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_MajinKIBlast_Tier1</li>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_MajinKIBlast_Tier2</li>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_MajinKIBlast_Tier3</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_MajinKIBlast_Tier1</defName>
+		<label>KI Blast</label>
+		<description>Fire a small Ki blast that sets targets on fire. Auto-castable.</description>
+		<nextTierDescription>Fire a small Ki blast doing extra damage and setting target on fire. Auto-castable.</nextTierDescription>
+		<acquireRequirement>
+			<skillPointsToUnlock>2</skillPointsToUnlock>
+		</acquireRequirement>
+		<energyCost>30</energyCost>
+		<cooldownTicks>900</cooldownTicks>
+		<verbProperties>
+			<li Class="TaranMagicFramework.VerbPropertiesAbility">
+				<label>KI Blast</label>
+				<verbClass>TaranMagicFramework.Verb_ShootAbility</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SR_MajinKI_BlastI</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>25.9</range>
+				<soundCast>SR_KiBlast</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<ai_IsWeapon>false</ai_IsWeapon>
+				<commandIcon>UI/Buttons/KiBlast</commandIcon>
+				<autocast>true</autocast>
+				<autocastChance>1</autocastChance>
+			</li>
+		</verbProperties>
+		<iconTexPath>UI/Buttons/KiBlast</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_MajinKIBlast_Tier2</defName>
+		<label>KI Blast</label>
+		<description>Fire a small ki blast that sets targets on fire. Auto-castable.</description>
+		<nextTierDescription>Fire a small Ii blast doing extra damage and setting target on fire. Auto-castable.</nextTierDescription>
+		<acquireRequirement>
+			<skillPointsToUnlock>2</skillPointsToUnlock>
+		</acquireRequirement>
+		<energyCost>25</energyCost>
+		<cooldownTicks>600</cooldownTicks>
+		<verbProperties>
+			<li Class="TaranMagicFramework.VerbPropertiesAbility">
+				<label>KI Blast</label>
+				<verbClass>TaranMagicFramework.Verb_ShootAbility</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SR_MajinKI_BlastII</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>25.9</range>
+				<soundCast>SR_KiBlast</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<ai_IsWeapon>false</ai_IsWeapon>
+				<commandIcon>UI/Buttons/KiBlast</commandIcon>
+				<autocast>true</autocast>
+				<autocastChance>1</autocastChance>
+			</li>
+		</verbProperties>
+		<iconTexPath>UI/Buttons/MajinKiBlast</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_MajinKIBlast_Tier3</defName>
+		<label>KI Blast</label>
+		<description>Fire a small ki blast that sets targets on fire</description>
+		<acquireRequirement>
+			<skillPointsToUnlock>2</skillPointsToUnlock>
+		</acquireRequirement>
+		<abilitiesToUnlock>
+			<li>SR_MajinKIVolley</li>
+		</abilitiesToUnlock>
+		<energyCost>20</energyCost>
+		<cooldownTicks>300</cooldownTicks>
+		<verbProperties>
+			<li Class="TaranMagicFramework.VerbPropertiesAbility">
+				<label>KI Blast</label>
+				<verbClass>TaranMagicFramework.Verb_ShootAbility</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SR_MajinKI_BlastIII</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>25.9</range>
+				<soundCast>SR_KiBlast</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<ai_IsWeapon>false</ai_IsWeapon>
+				<commandIcon>UI/Buttons/KiBlast</commandIcon>
+				<autocast>true</autocast>
+				<autocastChance>1</autocastChance>
+			</li>
+		</verbProperties>
+		<iconTexPath>UI/Buttons/KiBlast</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+</Defs>

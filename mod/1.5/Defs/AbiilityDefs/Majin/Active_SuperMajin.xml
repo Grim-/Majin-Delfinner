@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_SuperMajinKISkill"> <!-- Change the ParentName -->
+		<defName>SR_SuperMajin</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+		<label>Super Majin</label> <!-- The in game name that will be shown when your cursor hover on the skill icon -->
+		<uiSkillIcon>UI/Buttons/TrueMajin</uiSkillIcon> <!-- Texture path to your skill icons -->
+		<abilityClass>SaiyanMod.KIAbility_SuperSaiyan</abilityClass> <!-- This point to the C# class code for the ability you write, have to use namespace SaiyanMod for some reason -->
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_SuperMajin_Tier1</li> <!-- should contain all the skill tier listed below this def. -->
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_SuperMajin_Tier1</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+		<label>Super Majin</label> <!-- The ingame name that will be shown when your cursor hover on the skill icon, any string is fine -->
+		<description>Pawn becomes...what is that power?</description>
+		<glowProps>
+			<glowColor>255, 0, 162</glowColor>
+			<glowRadius>7</glowRadius>
+		</glowProps>
+		<overlayProps>
+			<overlay>SR_PowerUpOverlay</overlay> <!-- This is where you change the effect of the Ki aura, new overlay with custom color can be added in Animation def, subjectible to The Saiyans Rework which may change this -->
+			<scale>1.5</scale>
+			<duration>900</duration>
+		</overlayProps>
+		<abilitiesToUnlock>
+			<li>SR_MajinKamehameha</li>
+		</abilitiesToUnlock>
+		<acquireRequirement>
+			<skillPointsToUnlock>25</skillPointsToUnlock>
+		</acquireRequirement>
+		<regenRate>0.05</regenRate>
+		<isLearnable>false</isLearnable>
+		<soundOnCast>SR_SuperSaiyan</soundOnCast> <!-- you can keep it like this, or change it to fart sound, need to add new sound def if you has a custom transformation sound -->
+		<energyCost>35</energyCost>
+		<cooldownTicks>1</cooldownTicks>
+		<iconTexPath>UI/Buttons/TrueMajin</iconTexPath> <!-- Texture path to your skill icons -->
+	</SaiyanMod.AbilityTierKIDef>
+</Defs>

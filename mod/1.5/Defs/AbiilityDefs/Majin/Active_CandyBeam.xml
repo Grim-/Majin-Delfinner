@@ -5,11 +5,12 @@
 		<label>Candy Beam</label>
 		<uiSkillIcon>UI/Icons/KIBeam</uiSkillIcon>
 		<abilityTiers>
-			<li Class="SaiyanMod.AbilityTierKIDef">SR_CandyBeam_Tier1</li>
+			<li Class="Majin.AbilityTier_MajinCandyBeam">SR_CandyBeam_Tier1</li>
 		</abilityTiers>
+    <abilityClass>Majin.KIAbility_MajinCandyBeam</abilityClass>
 	</TaranMagicFramework.AbilityDef>
 
-	<SaiyanMod.AbilityTierKIDef>
+	<Majin.AbilityTier_MajinCandyBeam>
 		<defName>SR_CandyBeam_Tier1</defName>
 		<label>Candy Beam</label>
 		<description>Convert your opponent to a snack with a well-timed beam attack!</description>
@@ -21,5 +22,8 @@
 		<cooldownTicks>30000</cooldownTicks>
 		<effectRadius>5</effectRadius>
 		<iconTexPath>UI/FoodBeam</iconTexPath>
-	</SaiyanMod.AbilityTierKIDef>
+    <availableCandyDefs>
+      <li>MajinCandy</li>
+    </availableCandyDefs>
+	</Majin.AbilityTier_MajinCandyBeam>
 </Defs>

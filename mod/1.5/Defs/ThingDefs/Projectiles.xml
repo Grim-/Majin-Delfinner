@@ -82,6 +82,7 @@
     <ThingDef ParentName="SR_KIBeamBase">
       <defName>MajinBeamProjectile</defName>
       <label>KI Bomb</label>
+      <thingClass>Majin.MajinProjectile</thingClass>
       <graphicData>
         <texPath>Animations/Ki_SuperBeamProjectile</texPath>
         <graphicClass>TaranMagicFramework.Graphic_Animation</graphicClass>

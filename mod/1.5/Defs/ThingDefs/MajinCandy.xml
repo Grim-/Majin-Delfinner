@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>MajinCandy</defName>
-    <label>senzu bean</label>
-    <description>A mystical bean that instantly restores health and stamina when consumed. Originally cultivated by Korin, these rare beans can heal even the most grievous injuries and restore energy to exhausted fighters.</description>
+    <label>Majin Candy</label>
+    <description>Tastes like horror!</description>
     <graphicData>
       <texPath>Things/Item/SaibamenSeed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -49,6 +49,15 @@
     <comps>
       <li Class="Majin.CompProperties_StoredPawn">
       </li>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Absorb {0_label}</useLabel>
+        <useDuration>150</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="Majin.CompProperties_MajinConsume">
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
     </comps>
   </ThingDef>
 </Defs>

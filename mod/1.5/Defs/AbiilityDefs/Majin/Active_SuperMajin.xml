@@ -8,6 +8,8 @@
 		<abilityTiers>
 			<li Class="SaiyanMod.AbilityTierKIDef">SR_SuperMajin_Tier1</li> <!-- should contain all the skill tier listed below this def. -->
 		</abilityTiers>
+    <hidden>true</hidden>
+    <hiddenUntilUnlocked>true</hiddenUntilUnlocked>
 	</TaranMagicFramework.AbilityDef>
 
 	<SaiyanMod.AbilityTierKIDef>

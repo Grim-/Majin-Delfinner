@@ -14,6 +14,7 @@
 			<li Class="SaiyanMod.AbilityTierKIDef">SR_Regeneration_Tier5</li>
 		</abilityTiers>
 	</TaranMagicFramework.AbilityDef>
+
 	<SaiyanMod.AbilityTierKIDef>
 		<defName>SR_Regeneration_Tier1</defName>
 		<label>Regeneration I</label>
@@ -22,6 +23,7 @@
 		</acquireRequirement>
 		<hediffProps><hediff>SR_MajinRegenI</hediff></hediffProps>
 	</SaiyanMod.AbilityTierKIDef>
+
 	<SaiyanMod.AbilityTierKIDef>
 		<defName>SR_Regeneration_Tier2</defName>
 		<label>Regeneration II</label>
@@ -38,6 +40,7 @@
 		</acquireRequirement>
 		<hediffProps><hediff>SR_MajinRegenIII</hediff></hediffProps>
 	</SaiyanMod.AbilityTierKIDef>
+
 	<SaiyanMod.AbilityTierKIDef>
 		<defName>SR_Regeneration_Tier4</defName>
 		<label>Regeneration IV</label>
@@ -46,6 +49,7 @@
 		</acquireRequirement>
 		<hediffProps><hediff>SR_MajinRegenIV</hediff></hediffProps>
 	</SaiyanMod.AbilityTierKIDef>
+	
 	<SaiyanMod.AbilityTierKIDef>
 		<defName>SR_Regeneration_Tier5</defName>
 		<label>Regeneration V</label>

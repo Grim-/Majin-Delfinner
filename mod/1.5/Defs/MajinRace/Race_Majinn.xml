@@ -164,7 +164,7 @@
       <graphicPaths Inherit="False">
         <body>MajinBody/Body/</body>
         <skinShader>CutoutSkin</skinShader>
-        <skinColor>(1, 0.275, 0.965, 1)</skinColor>
+        <skinColor>(248, 107, 255, 1)</skinColor>
       </graphicPaths>
 		</alienRace>
 	</AlienRace.ThingDef_AlienRace>

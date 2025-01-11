@@ -22,14 +22,14 @@
 		<iconTexPath>UI/MajinRegenBlob</iconTexPath>
 	</Majin.AbilityTier_MajinAbsorb>
 
-  <HediffDef>
+  <Majin.HediffDef_MajinAbsorbption>
     <defName>SR_AbsorptionHediff</defName>
     <label>majin absorption</label>
     <description>This being has absorbed others into their form, gaining power from each absorption. The more powerful the being absorbed, the greater the power gained.</description>
     <hediffClass>Majin.Hediff_MajinAbsorbption</hediffClass>
     <defaultLabelColor>(206, 255, 237)</defaultLabelColor>
     <isBad>false</isBad>
-    <initialSeverity>0</initialSeverity>
+    <initialSeverity>1</initialSeverity>
     <maxSeverity>999999</maxSeverity>
     <scenarioCanAdd>false</scenarioCanAdd>
     <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
@@ -75,5 +75,15 @@
         </statOffsets>
       </li>
     </stages>
-  </HediffDef>
+    <upgrades>
+      <li>
+        <MinSeverity>20</MinSeverity>
+        <Ability>SR_SuperMajin</Ability>
+      </li>
+      <li>
+        <MinSeverity>20</MinSeverity>
+        <Ability>SR_Fission</Ability>
+      </li>
+    </upgrades>
+  </Majin.HediffDef_MajinAbsorbption>
 </Defs>

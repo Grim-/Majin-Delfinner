@@ -52,7 +52,7 @@ namespace Majin
         }
 
 
-        private ThingDef GetProjectile(int level)
+        protected virtual ThingDef GetProjectile(int level)
         {
             if (ProjectileData == null || ProjectileData.Count <= 0 || level > ProjectileData.Count)
             {

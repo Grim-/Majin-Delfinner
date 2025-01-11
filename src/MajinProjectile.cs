@@ -4,28 +4,40 @@ using Verse;
 
 namespace Majin
 {
-    public class MajinProjectile : KIBeam_Projectile
+    public class MajinCandyBeam_Projectile : KIBeam_Projectile
     {
+
+        public override int BaseDamage => 5;
+        public override int DamagePerLevel => 1;
+        public override int explosionRadius => 1;
+
         public override void Impact(Thing hitThing, bool blockedByShield = false)
         {
-            base.Impact(hitThing, blockedByShield);
-
-            if (hitThing is Pawn hitPawn)
+            if (hitThing is Pawn hitPawn && hitPawn.Faction.HostileTo(Faction.OfPlayer) && !hitPawn.Destroyed && hitPawn.Downed && hitPawn.RaceProps.Humanlike)
             {
-                if (hitPawn.Faction != Faction.OfPlayer)
+                hitPawn.TurnPawnIntoCandy();
+                return;
+            }
+            else
+            {
+                base.Impact(hitThing, blockedByShield);
+            }
+        }
+
+
+        protected override void DealDamageToThing(Thing thing)
+        {
+            if (thing is Pawn hitPawn && !hitPawn.Destroyed && hitPawn.Downed && hitPawn.RaceProps.Humanlike)
+            {
+                if (hitPawn.Faction.HostileTo(this.launcher.Faction))
                 {
-                    IntVec3 spawnPosition = hitPawn.Position;
-                    Map spawnMap = hitPawn.Map;
-
-                    Thing candy = ThingMaker.MakeThing(MajinDefOf.MajinCandy);
-
-                    if (candy.TryGetComp<CompStoredPawn>(out CompStoredPawn compStoredPawn))
-                    {
-                        compStoredPawn.StorePawn(hitPawn);
-                    }
-
-                    GenSpawn.Spawn(candy, spawnPosition, spawnMap);
+                    hitPawn.TurnPawnIntoCandy();
+                    return;
                 }
+            }
+            else
+            {
+                base.DealDamageToThing(thing);
             }
         }
     }

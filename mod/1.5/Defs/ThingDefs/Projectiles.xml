@@ -81,16 +81,16 @@
     <ThingDef ParentName="SR_KIBeamBase">
       <defName>MajinHealBeamProjectile</defName>
       <label>KI Bomb</label>
-      <thingClass>Majin.MajinProjectile</thingClass>
+      <thingClass>Majin.MajinCandyBeam_Projectile</thingClass>
       <graphicData>
         <texPath>MajinHealing_proj</texPath>
-        <graphicClass>TaranMagicFramework.Graphic_Animation</graphicClass>
+        <graphicClass>Graphic_Single</graphicClass>
       </graphicData>
       <projectile>
-        <damageAmountBase>90</damageAmountBase>
+        <damageAmountBase>25</damageAmountBase>
         <armorPenetrationBase>2</armorPenetrationBase>
         <speed>100</speed>
-        <explosionRadius>8</explosionRadius>
+        <explosionRadius>1</explosionRadius>
         <explosionDelay>0</explosionDelay>
       </projectile>
     </ThingDef>
@@ -98,16 +98,16 @@
     <ThingDef ParentName="SR_KIBeamBase">
       <defName>MajinBeamProjectile</defName>
       <label>KI Bomb</label>
-      <thingClass>Majin.MajinProjectile</thingClass>
+      <thingClass>Majin.MajinCandyBeam_Projectile</thingClass>
       <graphicData>
         <texPath>FoodBeam_proj</texPath>
-        <graphicClass>TaranMagicFramework.Graphic_Animation</graphicClass>
+        <graphicClass>Graphic_Single</graphicClass>
       </graphicData>
       <projectile>
-        <damageAmountBase>90</damageAmountBase>
+        <damageAmountBase>0</damageAmountBase>
         <armorPenetrationBase>2</armorPenetrationBase>
         <speed>100</speed>
-        <explosionRadius>8</explosionRadius>
+        <explosionRadius>3</explosionRadius>
         <explosionDelay>0</explosionDelay>
       </projectile>
     </ThingDef>

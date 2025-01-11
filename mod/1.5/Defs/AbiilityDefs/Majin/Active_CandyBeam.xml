@@ -20,7 +20,7 @@
 			<skillPointsToUnlock>10</skillPointsToUnlock>
 		</acquireRequirement>
 		<cooldownTicks>30000</cooldownTicks>
-		<effectRadius>5</effectRadius>
+		<effectRadius>30</effectRadius>
 		<iconTexPath>UI/FoodBeam</iconTexPath>
     <availableCandyDefs>
       <li>MajinCandy</li>

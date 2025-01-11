@@ -10,6 +10,8 @@
             <li Class="SaiyanMod.AbilityTierKIDef">SR_EvilMajin_Tier2</li>
             <li Class="SaiyanMod.AbilityTierKIDef">SR_EvilMajin_Tier3</li>					<!-- should contain all the skill tier listed below this def. -->
 		</abilityTiers>
+    <hidden>true</hidden>
+    <hiddenUntilUnlocked>true</hiddenUntilUnlocked>
 	</TaranMagicFramework.AbilityDef>
 
 	<SaiyanMod.AbilityTierKIDef Name ="EvilMajin_Tier">

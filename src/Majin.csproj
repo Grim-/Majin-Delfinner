@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.3.3\lib\net48\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="0TaranMagicFramework">
       <HintPath>D:\Games\RimWorld\Mods\2768874080\1.5\Assemblies\0TaranMagicFramework.dll</HintPath>
       <Private>False</Private>
@@ -85,16 +88,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbilityTier_MajinKIBeam.cs" />
-    <Compile Include="CompProperties_StoredPawn.cs" />
-    <Compile Include="HediffCompProperties_MajinRegeneration.cs" />
-    <Compile Include="Hediff_MajinAbsorbption.cs" />
-    <Compile Include="KIAbility_MajinAbsorb.cs" />
-    <Compile Include="KIAbility_MajinExplode.cs" />
+    <Compile Include="Ability\AbilityTier_MajinKIBeam.cs" />
+    <Compile Include="Ability\CompProperties_MajinConsume.cs" />
+    <Compile Include="Ability\KIAbility_MajinFission.cs" />
+    <Compile Include="Ability\PowerScoreUtility.cs" />
+    <Compile Include="Hediff\MajinPatchClass.cs" />
+    <Compile Include="Hediff\RowLayoutManager.cs" />
+    <Compile Include="ThingComps\CompProperties_StoredPawn.cs" />
+    <Compile Include="Hediff\HediffCompProperties_MajinRegeneration.cs" />
+    <Compile Include="Hediff\Hediff_MajinAbsorbption.cs" />
+    <Compile Include="ITab_MajinAbsorption.cs" />
+    <Compile Include="Ability\KIAbility_MajinAbsorb.cs" />
+    <Compile Include="Ability\KIAbility_MajinCandyBeam.cs" />
+    <Compile Include="Ability\KIAbility_MajinExplode.cs" />
     <Compile Include="MajinDefOf.cs" />
     <Compile Include="MajinProjectile.cs" />
     <Compile Include="MajinUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Window_AbilitySelection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

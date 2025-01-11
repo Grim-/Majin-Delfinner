@@ -31,6 +31,15 @@ namespace Majin
             return StoredPawn != null;
         }
 
+
+        public void DestroyStoredPawn()
+        {
+            if (HasStoredPawn())
+            {
+                StoredPawn = null;
+            }
+        }
+
         public Pawn ReleasePawn(IntVec3 releasePosition)
         {
             var pawn = StoredPawn;

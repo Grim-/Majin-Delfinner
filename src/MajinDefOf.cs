@@ -16,10 +16,13 @@ namespace Majin
         public static PawnKindDef SR_MajinRace;
         public static HediffDef SR_AbsorptionHediff;
 
+        public static GeneDef SR_MajinGene;
 
         public static ThingDef MajinCandy;
+        public static ThingDef MajinHealBeamProjectile;
         public static ThingDef MajinBeamProjectile;
 
         public static AbilityDef SR_CandyBeam;
+        public static AbilityDef SR_Fission;
     }
 }

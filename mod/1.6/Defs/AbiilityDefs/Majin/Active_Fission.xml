@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_Fission</defName>
+		<label>Fission</label>
+		<abilityTiers>
+			<li Class="Majin.AbilityTier_MajinFission">SR_Fission_Tier1</li>
+		</abilityTiers>
+    <abilityClass>Majin.KIAbility_MajinFission</abilityClass>
+    <hidden>true</hidden>
+    <hiddenUntilUnlocked>true</hiddenUntilUnlocked>
+	</TaranMagicFramework.AbilityDef>
+
+	<Majin.AbilityTier_MajinFission>
+		<defName>SR_Fission_Tier1</defName>
+		<label>Fission</label>
+		<acquireRequirement>
+			<skillPointsToUnlock>12</skillPointsToUnlock>
+		</acquireRequirement>
+		<effectRadius>5</effectRadius>
+		<energyCost>50</energyCost>
+		<cooldownTicks>3600</cooldownTicks>
+		<iconTexPath>UI/Buttons/Absorption</iconTexPath>
+	</Majin.AbilityTier_MajinFission>
+
+</Defs>

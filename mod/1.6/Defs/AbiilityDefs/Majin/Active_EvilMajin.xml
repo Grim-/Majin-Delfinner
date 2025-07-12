@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaranMagicFramework.AbilityDef ParentName="SR_SuperMajinKISkill"> <!-- Change the ParentName -->
+		<defName>SR_EvilMajin</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+		<label>Evil Majin</label> <!-- The in game name that will be shown when your cursor hover on the skill icon -->
+		<uiSkillIcon>UI/Buttons/SuperSaiyan</uiSkillIcon> <!-- Texture path to your skill icons -->
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_EvilMajin_Tier1</li>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_EvilMajin_Tier2</li>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_EvilMajin_Tier3</li>					<!-- should contain all the skill tier listed below this def. -->
+		</abilityTiers>
+    <hidden>true</hidden>
+    <hiddenUntilUnlocked>true</hiddenUntilUnlocked>
+	</TaranMagicFramework.AbilityDef>
+
+	<SaiyanMod.AbilityTierKIDef Name ="EvilMajin_Tier">
+		<defName>SR_EvilMajin_Tier1</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+		<label>Evil Majin I</label> <!-- The ingame name that will be shown when your cursor hover on the skill icon, any string is fine -->
+		<description>Pawn gains an absurd power boost as they tap into something beyond their usual limits.</description>
+		<glowProps>
+			<glowColor>128, 128, 128</glowColor>
+			<glowRadius>4</glowRadius>
+		</glowProps>
+		<overlayProps>
+			<overlay>SR_SuperSaiyanOverlay</overlay> <!-- This is where you change the effect of the Ki aura, new overlay with custom color can be added in Animation def, subjectible to The Saiyans Rework which may change this -->
+			<scale>1</scale>
+			<duration>900</duration>
+		</overlayProps>
+		<hediffProps><hediff>SR_Deranged</hediff></hediffProps>
+		<xpGainWhileActive>
+			<masteryGain>1</masteryGain>
+			<ticksInterval>2500</ticksInterval>
+		</xpGainWhileActive>
+		<regenRate>-0.03</regenRate>
+		<isLearnable>false</isLearnable>
+		<soundOnCast>SR_SuperSaiyan</soundOnCast> <!-- you can keep it like this, or change it to fart sound, need to add new sound def if you has a custom transformation sound -->
+		<energyCost>35</energyCost>
+		<cooldownTicks>1</cooldownTicks>
+		<iconTexPath>UI/MajinRegenBlob</iconTexPath> <!-- Texture path to your skill icons -->
+	</SaiyanMod.AbilityTierKIDef>
+
+	<SaiyanMod.AbilityTierKIDef ParentName ="EvilMajin_Tier">
+		<defName>SR_EvilMajin_Tier2</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+		<label>Evil Majin II</label> <!-- The ingame name that will be shown when your cursor hover on the skill icon, any string is fine -->
+		<description>Pawn gains an absurd power boost as they tap into something beyond their usual limits.</description>
+		<glowProps>
+			<glowColor>128, 128, 128</glowColor>
+			<glowRadius>4</glowRadius>
+		</glowProps>
+		<overlayProps>
+			<overlay>SR_SuperSaiyanOverlay</overlay> <!-- This is where you change the effect of the Ki aura, new overlay with custom color can be added in Animation def, subjectible to The Saiyans Rework which may change this -->
+			<scale>1</scale>
+			<duration>900</duration>
+		</overlayProps>
+		<hediffProps><hediff>SR_DerangedII</hediff></hediffProps>
+		<acquireRequirement>
+			<masteryPointsToUnlock>100</masteryPointsToUnlock>
+		</acquireRequirement>
+		<letterTitleKeyGained>SR.PawnLeveledUpSuperSaiyan</letterTitleKeyGained>
+		<letterDescKeysGained>SR.PawnLeveledUpSuperSaiyanDesc</letterDescKeysGained>
+		<regenRate>-0.01</regenRate>
+		<isLearnable>false</isLearnable>
+		<soundOnCast>SR_SuperSaiyan</soundOnCast> <!-- you can keep it like this, or change it to fart sound, need to add new sound def if you has a custom transformation sound -->
+		<energyCost>35</energyCost>
+		<cooldownTicks>1</cooldownTicks>
+			<iconTexPath>UI/MajinRegenBlob</iconTexPath> <!-- Texture path to your skill icons -->
+	</SaiyanMod.AbilityTierKIDef>
+
+  <SaiyanMod.AbilityTierKIDef ParentName ="EvilMajin_Tier">
+    <defName>SR_EvilMajin_Tier3</defName> <!-- Use newly named defName, defName cannot be share by 2 def -->
+    <label>Evil Majin (Mastered)</label> <!-- The ingame name that will be shown when your cursor hover on the skill icon, any string is fine -->
+    <description>Pawn gains an absurd power boost as they tap into something beyond their usual limits.</description>
+    <glowProps>
+      <glowColor>128, 128, 128</glowColor>
+      <glowRadius>4</glowRadius>
+    </glowProps>
+    <overlayProps>
+      <overlay>SR_SuperSaiyanOverlay</overlay> <!-- This is where you change the effect of the Ki aura, new overlay with custom color can be added in Animation def, subjectible to The Saiyans Rework which may change this -->
+      <scale>1</scale>
+      <duration>900</duration>
+    </overlayProps>
+    <hediffProps><hediff>SR_DerangedIII</hediff></hediffProps>
+    <acquireRequirement>
+      <masteryPointsToUnlock>350</masteryPointsToUnlock>
+    </acquireRequirement>
+    <letterTitleKeyGained>SR.PawnLeveledUpSuperSaiyan</letterTitleKeyGained>
+    <letterDescKeysGained>SR.PawnLeveledUpSuperSaiyanDesc</letterDescKeysGained>
+    <regenRate>0.015</regenRate>
+    <isLearnable>false</isLearnable>
+    <soundOnCast>SR_SuperSaiyan</soundOnCast> <!-- you can keep it like this, or change it to fart sound, need to add new sound def if you has a custom transformation sound -->
+    <energyCost>35</energyCost>
+    <cooldownTicks>1</cooldownTicks>
+    	<iconTexPath>UI/MajinRegenBlob</iconTexPath> <!-- Texture path to your skill icons -->
+  </SaiyanMod.AbilityTierKIDef>
+
+
+  <HediffDef>
+    <defName>SR_Deranged</defName>
+    <label>Majin Regeneration</label>
+    <description>This Majin regenerates much more quickly.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <InjuryHealingFactor>1</InjuryHealingFactor>
+        </statOffsets>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>SR_DerangedII</defName>
+    <label>Majin Regeneration</label>
+    <description>This Majin regenerates much more quickly.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <InjuryHealingFactor>1</InjuryHealingFactor>
+        </statOffsets>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>SR_DerangedIII</defName>
+    <label>Majin Regeneration</label>
+    <description>This Majin regenerates much more quickly.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <InjuryHealingFactor>1</InjuryHealingFactor>
+        </statOffsets>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

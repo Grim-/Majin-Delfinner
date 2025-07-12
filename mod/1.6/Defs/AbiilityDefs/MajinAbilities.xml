@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TaranMagicFramework.AbilityTreeDef>
+		<defName>SR_MajinAbilityTree</defName>
+		<backgroundTexPath>Fusion</backgroundTexPath>
+	</TaranMagicFramework.AbilityTreeDef>
+
+	<TaranMagicFramework.AbilityDef Name="SR_MajinAbilityTree" ParentName="SR_SaiyanAbilityBase" Abstract="True">
+		<abilityTrees>
+			<li>SR_MajinAbilityTree</li>
+		</abilityTrees>
+	</TaranMagicFramework.AbilityDef>
+
+	<TaranMagicFramework.AbilityDef Name="SR_MajinLightPassives" ParentName="SR_MajinAbilityTree" Abstract="True">
+		<abilityRank>SR_LightPassiveRank</abilityRank>
+		<abilityClass>SaiyanMod.KIAbilityPassive</abilityClass>
+		<showMastered>false</showMastered>
+	</TaranMagicFramework.AbilityDef>
+
+	<TaranMagicFramework.AbilityDef Name="SR_BasicMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
+		<abilityRank>SR_BasicRank</abilityRank>
+	</TaranMagicFramework.AbilityDef>
+
+	<TaranMagicFramework.AbilityDef Name="SR_PassiveMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
+		<abilityRank>SR_PassiveRank</abilityRank>
+	</TaranMagicFramework.AbilityDef>
+
+	<TaranMagicFramework.AbilityDef Name="SR_AdvancedMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
+		<abilityRank>SR_AdvancedRank</abilityRank>
+	</TaranMagicFramework.AbilityDef>
+
+	<TaranMagicFramework.AbilityDef Name="SR_SuperMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
+		<abilityRank>SR_SuperSaiyan</abilityRank>
+	</TaranMagicFramework.AbilityDef>
+</Defs>

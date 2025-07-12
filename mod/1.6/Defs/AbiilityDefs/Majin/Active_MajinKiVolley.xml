@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_BasicMajinKISkill">
+		<defName>SR_MajinKIVolley</defName>
+		<label>KI Voley</label>
+		<hidden>true</hidden>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_MajinKIVolley_Tier1</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_MajinKIVolley_Tier1</defName>
+		<label>KI Voley</label>
+		<description>A rapid fire volley of Ki blasts.</description>
+		<energyCost>3.33</energyCost>
+		<cooldownTicks>1800</cooldownTicks>
+		<verbProperties>
+			<li Class="TaranMagicFramework.VerbPropertiesAbility">
+				<label>KI Blast Volley</label>
+				<verbClass>TaranMagicFramework.Verb_ShootAbility</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SR_MajinKI_BlastIII</defaultProjectile>
+				<warmupTime>0.2</warmupTime>
+				<range>25.9</range>
+				<burstShotCount>7</burstShotCount>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<soundCast>SR_KiVolley</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<ai_IsWeapon>false</ai_IsWeapon>
+				<commandIcon>UI/MajinRegenBlob</commandIcon>
+				<autocast>true</autocast>
+				<autocastChance>1</autocastChance>
+			</li>
+		</verbProperties>
+		<iconTexPath>UI/Buttons/KIVolley</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+</Defs>

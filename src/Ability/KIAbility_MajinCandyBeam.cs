@@ -15,7 +15,7 @@ namespace Majin
 
         public override bool CanHitTarget(LocalTargetInfo target)
         {
-            return base.CanHitTarget(target) && target.Cell != null && GenSight.LineOfSight(target.Cell, target.Cell, this.pawn.Map);
+            return base.CanHitTarget(target) && target.Cell.IsValid && GenSight.LineOfSight(target.Cell, target.Cell, this.pawn.Map);
         }
 
         //public override void Start(bool consumeEnergy = true)

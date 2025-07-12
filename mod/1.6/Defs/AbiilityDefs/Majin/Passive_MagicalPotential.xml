@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TaranMagicFramework.AbilityDef ParentName="SR_MajinLightPassives">
+        <defName>SR_MagicalPotential</defName>
+        <label>Magical Potential</label>
+		<description>you're quite adept at using your magical powers</description>
+        <abilityTiers>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_MagicalPotential_Tier1</li>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_MagicalPotential_Tier2</li>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_MagicalPotential_Tier3</li>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_MagicalPotential_Tier4</li>
+            <li Class="SaiyanMod.AbilityTierKIDef">SR_MagicalPotential_Tier5</li>
+        </abilityTiers>
+    </TaranMagicFramework.AbilityDef>
+
+    <SaiyanMod.AbilityTierKIDef>
+        <defName>SR_MagicalPotential_Tier1</defName>
+        <label>Magical Potential I</label>
+        <acquireRequirement>
+            <skillPointsToUnlock>1</skillPointsToUnlock>
+        </acquireRequirement>
+        <statOffsets>
+		    <SR_KIExperienceRateMultiplier>0.05</SR_KIExperienceRateMultiplier>
+        </statOffsets>
+    </SaiyanMod.AbilityTierKIDef>
+	<SaiyanMod.AbilityTierKIDef>
+        <defName>SR_MagicalPotential_Tier2</defName>
+        <label>Magical Potential II</label>
+        <acquireRequirement>
+            <skillPointsToUnlock>1</skillPointsToUnlock>
+        </acquireRequirement>
+        <statOffsets>
+		    <SR_KIExperienceRateMultiplier>0.1</SR_KIExperienceRateMultiplier>
+        </statOffsets>
+    </SaiyanMod.AbilityTierKIDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+        <defName>SR_MagicalPotential_Tier3</defName>
+        <label>Magical Potential III</label>
+        <acquireRequirement>
+            <skillPointsToUnlock>1</skillPointsToUnlock>
+        </acquireRequirement>
+        <statOffsets>
+		    <SR_KIExperienceRateMultiplier>0.15</SR_KIExperienceRateMultiplier>
+        </statOffsets>
+    </SaiyanMod.AbilityTierKIDef>
+
+	<SaiyanMod.AbilityTierKIDef>
+        <defName>SR_MagicalPotential_Tier4</defName>
+        <label>Magical Potential IV</label>
+        <acquireRequirement>
+            <skillPointsToUnlock>1</skillPointsToUnlock>
+        </acquireRequirement>
+        <statOffsets>
+		    <SR_KIExperienceRateMultiplier>0.2</SR_KIExperienceRateMultiplier>
+        </statOffsets>
+    </SaiyanMod.AbilityTierKIDef>
+    
+	<SaiyanMod.AbilityTierKIDef>
+        <defName>SR_MagicalPotential_Tier5</defName>
+        <label>Magical Potential V</label>
+        <acquireRequirement>
+            <skillPointsToUnlock>1</skillPointsToUnlock>
+        </acquireRequirement>
+        <statOffsets>
+		    <SR_KIExperienceRateMultiplier>0.25</SR_KIExperienceRateMultiplier>
+        </statOffsets>
+    </SaiyanMod.AbilityTierKIDef>
+</Defs>

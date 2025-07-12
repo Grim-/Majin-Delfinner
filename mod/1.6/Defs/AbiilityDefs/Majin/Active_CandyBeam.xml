@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_CandyBeam</defName>
+		<label>Candy Beam</label>
+		<uiSkillIcon>UI/Icons/KIBeam</uiSkillIcon>
+		<abilityTiers>
+			<li Class="Majin.AbilityTier_MajinCandyBeam">SR_CandyBeam_Tier1</li>
+		</abilityTiers>
+    <abilityClass>Majin.KIAbility_MajinCandyBeam</abilityClass>
+	</TaranMagicFramework.AbilityDef>
+
+	<Majin.AbilityTier_MajinCandyBeam>
+		<defName>SR_CandyBeam_Tier1</defName>
+		<label>Candy Beam</label>
+		<description>Convert your opponent to a snack with a well-timed beam attack!</description>
+		<soundOnCast>SR_KiBeam</soundOnCast>
+		<energyCost>80</energyCost>
+		<acquireRequirement>
+			<skillPointsToUnlock>10</skillPointsToUnlock>
+		</acquireRequirement>
+		<cooldownTicks>30000</cooldownTicks>
+		<effectRadius>30</effectRadius>
+		<iconTexPath>UI/FoodBeam</iconTexPath>
+    <availableCandyDefs>
+      <li>MajinCandy</li>
+    </availableCandyDefs>
+	</Majin.AbilityTier_MajinCandyBeam>
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaranMagicFramework.AbilityDef ParentName="SR_AdvancedMajinKISkill">
+		<defName>SR_ExtinctionAttack</defName>
+		<label>Extinction Blast</label>
+		<abilityTiers>
+			<li Class="SaiyanMod.AbilityTierKIDef">SR_ExtinctionAttack_Tier1</li>
+		</abilityTiers>
+	</TaranMagicFramework.AbilityDef>
+	<SaiyanMod.AbilityTierKIDef>
+		<defName>SR_ExtinctionAttack_Tier1</defName>
+		<label>Extinction Blast</label>
+		<acquireRequirement>
+			<skillPointsToUnlock>8</skillPointsToUnlock>
+		</acquireRequirement>
+		<energyCost>50</energyCost>
+		<cooldownTicks>3600</cooldownTicks>
+		<verbProperties>
+			<li Class="TaranMagicFramework.VerbPropertiesAbility">
+				<label>Extinction blast</label>
+				<verbClass>TaranMagicFramework.Verb_ShootAbility</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SR_ExtinctionKIBlast</defaultProjectile>
+				<warmupTime>75</warmupTime>
+				<range>46.9</range>
+				<soundCast>SR_KiBlast</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<ai_IsWeapon>false</ai_IsWeapon>
+				<commandIcon>UI/MajinRegenBlob</commandIcon>
+				<autocast>false</autocast>
+				<warmupAnimation>SR_BurningAttackCharging</warmupAnimation>
+			</li>
+		</verbProperties>
+		<iconTexPath>UI/MajinRegenBlob</iconTexPath>
+	</SaiyanMod.AbilityTierKIDef>
+
+</Defs>

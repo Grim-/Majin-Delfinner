@@ -11,16 +11,19 @@ using Verse;
 
 namespace Majin
 {
+
+
+
     public static class MajinUtil
     {
 
 
         public static bool TryAbsorb(this Pawn pawn, Pawn target)
         {
-            Hediff_MajinAbsorbption majinAbsorbption = (Hediff_MajinAbsorbption)pawn.health.GetOrAddHediff(MajinDefOf.SR_AbsorptionHediff);
+            Gene_Majin majinAbsorbption = pawn.genes.GetFirstGeneOfType<Gene_Majin>();
             if (majinAbsorbption != null)
             {
-                Hediff_MajinAbsorbption targetMajinAbsorbption = target.health.hediffSet.GetFirstHediffOfDef(MajinDefOf.SR_AbsorptionHediff) as Hediff_MajinAbsorbption;
+                Gene_Majin targetMajinAbsorbption = target.genes.GetFirstGeneOfType<Gene_Majin>();
                 if (targetMajinAbsorbption != null)
                 {
                     var absorbedPawns = targetMajinAbsorbption.AbsorbedPawns?.ToList() ?? new List<Pawn>();
@@ -42,7 +45,7 @@ namespace Majin
         [DebugAction("Majin", "Generate Random Absorbed Pawns", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void GenerateAndAbsorbRandomPawns(Pawn pawn)
         {
-            Hediff_MajinAbsorbption majinAbsorbption = pawn.health.hediffSet.GetFirstHediffOfDef(MajinDefOf.SR_AbsorptionHediff) as Hediff_MajinAbsorbption;
+            Gene_Majin majinAbsorbption = pawn.genes.GetFirstGeneOfType<Gene_Majin>();
             if (majinAbsorbption == null)
             {
                 return;
@@ -126,42 +129,17 @@ namespace Majin
 
             Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
         }
-        public static bool TryTransferAbsorption(this Pawn recipient, Pawn donor, int maxTransfers = int.MaxValue)
-        {
-            Hediff_MajinAbsorbption recipientAbsorption = (Hediff_MajinAbsorbption)recipient.health.GetOrAddHediff(MajinDefOf.SR_AbsorptionHediff);
-            if (recipientAbsorption == null)
-            {
-                return false;
-            }
-
-            Hediff_MajinAbsorbption donorAbsorption = donor.health.hediffSet.GetFirstHediffOfDef(MajinDefOf.SR_AbsorptionHediff) as Hediff_MajinAbsorbption;
-            if (donorAbsorption == null || donorAbsorption.AbsorbedPawns == null || !donorAbsorption.AbsorbedPawns.Any())
-            {
-                return false;
-            }
-
-            var pawnsToTransfer = donorAbsorption.AbsorbedPawns.Take(maxTransfers).ToList();
-
-            foreach (var pawn in pawnsToTransfer)
-            {
-                donorAbsorption.ReleaseAbsorbedPawn(pawn);
-                recipientAbsorption.RecordAbsorbption(pawn);
-            }
-
-            return pawnsToTransfer.Any();
-        }
-
         public static bool TryTransferAbsorption(this Pawn recipient, Pawn donor, float transferPercent = 100f)
         {
 
-            Hediff_MajinAbsorbption recipientAbsorption = (Hediff_MajinAbsorbption)recipient.health.GetOrAddHediff(MajinDefOf.SR_AbsorptionHediff);
+            Gene_Majin recipientAbsorption = recipient.genes.GetFirstGeneOfType<Gene_Majin>();
             if (recipientAbsorption == null)
             {
                 return false;
             }
 
 
-            Hediff_MajinAbsorbption donorAbsorption = donor.health.hediffSet.GetFirstHediffOfDef(MajinDefOf.SR_AbsorptionHediff) as Hediff_MajinAbsorbption;
+            Gene_Majin donorAbsorption = donor.genes.GetFirstGeneOfType<Gene_Majin>();
             if (donorAbsorption == null || donorAbsorption.AbsorbedPawns == null || !donorAbsorption.AbsorbedPawns.Any())
             {
                 return false;

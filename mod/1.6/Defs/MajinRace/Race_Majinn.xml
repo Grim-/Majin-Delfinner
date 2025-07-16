@@ -14,8 +14,79 @@
     <biocodeWeaponChance>0.1</biocodeWeaponChance>
     <initialResistanceRange>1~10</initialResistanceRange>
     <apparelRequired>
-        <li>SR_MajinArmour</li>
+      <li>SR_MajinArmour</li>
     </apparelRequired>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SR_MajinRace>999</SR_MajinRace>
+      </xenotypeChances>
+    </xenotypeSet>
+    <lifeStages Inherit="False">
+      <li>
+        <bodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+          <color>(0.965, 0.482, 0.98)</color>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.32, 0.35, 0.32)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+          <color>(0.965, 0.482, 0.98)</color>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.32, 0.35, 0.32)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+          <color>(0.965, 0.482, 0.98)</color>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.32, 0.35, 0.32)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+          <color>(0.965, 0.482, 0.98)</color>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.32, 0.35, 0.32)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>MajinBody/Body/Naked</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
   </PawnKindDef>
 
   <XenotypeDef>
@@ -28,144 +99,202 @@
     <genes>
       <li>SR_MajinGene</li>
     </genes>
+
   </XenotypeDef>
 
   <AlienRace.ThingDef_AlienRace ParentName="Human">
-		<defName>SR_MajinRace</defName>
-		<label>Majin</label>
-		<description>majin race.</description>
-		<statBases>
-			<MarketValue>4375</MarketValue>
-			<PainShockThreshold>0.9</PainShockThreshold>
-			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
-			<ArmorRating_Heat>0.3</ArmorRating_Heat>
-			<MaxNutrition>2.5</MaxNutrition>
-		</statBases>
-		<tools Inherit="False">
-			<li>
-				<label>left fist</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>12</power>
-				<cooldownTime>2</cooldownTime>
-				<armorPenetration>0.1</armorPenetration>
-				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
-			</li>
-			<li>
-				<label>right fist</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>12</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-				<armorPenetration>0.1</armorPenetration>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
-			</li>
-			<li>
-				<label>teeth</label>
-				<capacities>
-					<li>Bite</li>
-				</capacities>
-				<power>12</power>
-				<armorPenetration>0.1</armorPenetration>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-				<chanceFactor>0.07</chanceFactor>
-			</li>
-			<li>
-				<label>head</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>12</power>
-				<armorPenetration>0.1</armorPenetration>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				<chanceFactor>0.2</chanceFactor>
-			</li>
-		</tools>
-		<race>
-			<lifeExpectancy>190</lifeExpectancy>
-			<body>Human</body>
-			<baseBodySize>1</baseBodySize>
-			<baseHealthScale>1</baseHealthScale>
-			<baseHungerRate>1.5</baseHungerRate>
-			<alwaysViolent>true</alwaysViolent>
-		</race>
+    <defName>SR_MajinRace</defName>
+    <label>Majin</label>
+    <description>majin race.</description>
+    <statBases>
+      <MarketValue>4375</MarketValue>
+      <PainShockThreshold>0.9</PainShockThreshold>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <MaxNutrition>2.5</MaxNutrition>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Biotech">1</VacuumResistance>
+    </statBases>
+    <tools Inherit="False">
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+        <armorPenetration>0.1</armorPenetration>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <armorPenetration>0.1</armorPenetration>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>12</power>
+        <armorPenetration>0.1</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.07</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <armorPenetration>0.1</armorPenetration>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <lifeExpectancy>190</lifeExpectancy>
+      <body>Human</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <baseHungerRate>1.5</baseHungerRate>
+      <alwaysViolent>true</alwaysViolent>
+    </race>
 
-		<recipes>
-		</recipes>
+    <recipes>
+    </recipes>
 
-		<alienRace>
-			<raceRestriction>
-				<whiteGeneList>
-				</whiteGeneList>
-				<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
-				<whiteXenotypeList>
-				</whiteXenotypeList>
-				<xenotypeList>
-					<li>SR_MajinRace</li>
-				</xenotypeList>
-			</raceRestriction>
-			<generalSettings>
-				<humanRecipeImport>true</humanRecipeImport>
-				<allowHumanBios>true</allowHumanBios>
-				<alienPartGenerator Inherit="False">
-					<bodyTypes>
-						<li>Fat</li>
-						<li>Female</li>
-					</bodyTypes>
-					<headTypes>
-						<li>Male_AverageNormal</li>
-						<li>Female_AverageNormal</li>
-					</headTypes>
-				</alienPartGenerator>
-				<reproduction>
-        <maleFertilityAgeFactor>
-          <points>
-            <li>(14, 0)</li>
-            <li>(18, 1)</li>
-            <li>(70, 1)</li>
-            <li>(90, 0)</li>
-          </points>
-        </maleFertilityAgeFactor>
-        <femaleFertilityAgeFactor>
-          <points>
-            <li>(14, 0)</li>
-            <li>(20, 1)</li>
-            <li>(35, 1)</li>
-            <li>(50, 0.5)</li>
-            <li>(60, 0.1)</li>
-            <li>(65, 0.02)</li>
-            <li>(70, 0)</li>
-          </points>
-        </femaleFertilityAgeFactor>
-				</reproduction>
-			</generalSettings>
+    <alienRace>
+      <raceRestriction>
+        <whiteGeneList>
+        </whiteGeneList>
+        <onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
+        <whiteXenotypeList>
+        </whiteXenotypeList>
+        <xenotypeList>
+          <li>SR_MajinRace</li>
+        </xenotypeList>
+        <blackEndoCategories>
+          <li>Melanin</li>
+        </blackEndoCategories>
+      </raceRestriction>
+
+      <generalSettings>
+        <humanRecipeImport>true</humanRecipeImport>
+        <allowHumanBios>true</allowHumanBios>
+        <alienPartGenerator Inherit="False">
+          <bodyTypes>
+            <li>Fat</li>
+            <li>Female</li>
+          </bodyTypes>
+          <headTypes>
+            <li>Male_AverageNormal</li>
+            <li>Female_AverageNormal</li>
+          </headTypes>
+          <colorChannels Inherit="False">
+            <li>
+              <name>skin</name>
+              <first Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0.961, 0.329, 0.714, 1.000)</only>
+                  </li>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0, 128, 255, 255)</only>
+                  </li>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0.329, 1, 0.914, 1.000)</only>
+                  </li>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(1, 0.627, 0.329, 1.000)</only>
+                  </li>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0.988, 0.263, 0.263, 1.000)</only>
+                  </li>
+                </options>
+              </first>
+            </li>
+            <li>
+              <name>hair</name>
+              <first Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0.000, 1.000, 0.000, 1.000)</only>
+                  </li>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0, 128, 255, 255)</only>
+                  </li>
+                  <li>
+                    <weight>10</weight>
+                    <only>RGBA(0.000, 0.000, 1.000, 1.000)</only>
+                  </li>
+                </options>
+              </first>
+              <second Class="ColorGenerator_Single">
+                <color>RGBA(128, 255, 0, 255)</color>
+              </second>
+            </li>
+          </colorChannels>
+        </alienPartGenerator>
+        <reproduction>
+          <maleFertilityAgeFactor>
+            <points>
+              <li>(14, 0)</li>
+              <li>(18, 1)</li>
+              <li>(70, 1)</li>
+              <li>(90, 0)</li>
+            </points>
+          </maleFertilityAgeFactor>
+          <femaleFertilityAgeFactor>
+            <points>
+              <li>(14, 0)</li>
+              <li>(20, 1)</li>
+              <li>(35, 1)</li>
+              <li>(50, 0.5)</li>
+              <li>(60, 0.1)</li>
+              <li>(65, 0.02)</li>
+              <li>(70, 0)</li>
+            </points>
+          </femaleFertilityAgeFactor>
+        </reproduction>
+
+      </generalSettings>
       <graphicPaths Inherit="False">
         <body>MajinBody/Body/</body>
         <skinShader>CutoutSkin</skinShader>
-        <skinColor>(248, 107, 255, 1)</skinColor>
+        <skinColor>(255, 100, 255, 255)</skinColor>
       </graphicPaths>
-		</alienRace>
-	</AlienRace.ThingDef_AlienRace>
+    </alienRace>
+  </AlienRace.ThingDef_AlienRace>
 </Defs>

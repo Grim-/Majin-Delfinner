@@ -13,17 +13,17 @@ namespace Majin
         }
 
 
-        [HarmonyPatch(typeof(BodyPartDef), "GetMaxHealth")]
-        public class GetMaxHealth_Patch
-        {
-            [HarmonyPriority(Priority.Last)]
-            private static void Postfix(BodyPartDef __instance, Pawn pawn, ref float __result)
-            {
-                if (pawn.IsMajin())
-                {
-                    __result *= 2.2f;
-                }
-            }
-        }
+        //[HarmonyPatch(typeof(BodyPartDef), "GetMaxHealth")]
+        //public class GetMaxHealth_Patch
+        //{
+        //    [HarmonyPriority(Priority.Last)]
+        //    private static void Postfix(BodyPartDef __instance, Pawn pawn, ref float __result)
+        //    {
+        //        if (pawn.IsMajin())
+        //        {
+        //            __result *= 2.2f;
+        //        }
+        //    }
+        //}
     }
 }

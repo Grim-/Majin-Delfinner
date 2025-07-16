@@ -16,21 +16,22 @@
 		<acquireRequirement>
 			<skillPointsToUnlock>12</skillPointsToUnlock>
 		</acquireRequirement>
+    <jobDef>SR_CastAbilityTouch</jobDef>
 		<effectRadius>5</effectRadius>
 		<energyCost>50</energyCost>
 		<cooldownTicks>3600</cooldownTicks>
 		<iconTexPath>UI/MajinRegenBlob</iconTexPath>
 	</Majin.AbilityTier_MajinAbsorb>
 
-  <Majin.HediffDef_MajinAbsorbption>
+  <HediffDef>
     <defName>SR_AbsorptionHediff</defName>
     <label>majin absorption</label>
     <description>This being has absorbed others into their form, gaining power from each absorption. The more powerful the being absorbed, the greater the power gained.</description>
     <hediffClass>Majin.Hediff_MajinAbsorbption</hediffClass>
     <defaultLabelColor>(206, 255, 237)</defaultLabelColor>
     <isBad>false</isBad>
-    <initialSeverity>1</initialSeverity>
-    <maxSeverity>999999</maxSeverity>
+    <initialSeverity>0</initialSeverity>
+    <maxSeverity>1</maxSeverity>
     <scenarioCanAdd>false</scenarioCanAdd>
     <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
 
@@ -45,7 +46,7 @@
       </li>
       <li>
         <label>moderate absorber</label>
-        <minSeverity>5</minSeverity>
+        <minSeverity>0.2</minSeverity>
         <statOffsets>
           <MeleeDodgeChance>0.10</MeleeDodgeChance>
           <MeleeHitChance>0.10</MeleeHitChance>
@@ -54,7 +55,7 @@
       </li>
       <li>
         <label>major absorber</label>
-        <minSeverity>10</minSeverity>
+        <minSeverity>0.4</minSeverity>
         <statOffsets>
           <MeleeDodgeChance>0.15</MeleeDodgeChance>
           <MeleeHitChance>0.15</MeleeHitChance>
@@ -65,7 +66,7 @@
       </li>
       <li>
         <label>ultimate absorber</label>
-        <minSeverity>20</minSeverity>
+        <minSeverity>1</minSeverity>
         <statOffsets>
           <MeleeDodgeChance>0.25</MeleeDodgeChance>
           <MeleeHitChance>0.25</MeleeHitChance>
@@ -75,15 +76,5 @@
         </statOffsets>
       </li>
     </stages>
-    <upgrades>
-      <li>
-        <MinSeverity>20</MinSeverity>
-        <Ability>SR_SuperMajin</Ability>
-      </li>
-      <li>
-        <MinSeverity>20</MinSeverity>
-        <Ability>SR_Fission</Ability>
-      </li>
-    </upgrades>
-  </Majin.HediffDef_MajinAbsorbption>
+  </HediffDef>
 </Defs>

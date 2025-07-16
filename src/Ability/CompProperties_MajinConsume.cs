@@ -36,7 +36,7 @@ namespace Majin
 
             if (compStoredPawn != null && compStoredPawn.HasStoredPawn())
             {
-                Hediff_MajinAbsorbption majinAbsorbption = (Hediff_MajinAbsorbption)usedBy.health.GetOrAddHediff(MajinDefOf.SR_AbsorptionHediff);
+                Gene_Majin majinAbsorbption = usedBy.genes.GetFirstGeneOfType<Gene_Majin>();
                 if (majinAbsorbption != null)
                 {
                     majinAbsorbption.RecordAbsorbption(compStoredPawn.Pawn);

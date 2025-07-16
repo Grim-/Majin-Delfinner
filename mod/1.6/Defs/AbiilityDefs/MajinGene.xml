@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-<GeneDef ParentName="SR_GeneClassBase">
-  <defName>SR_MajinGene</defName>
-  <label>Majin</label>
-  <description>A Majin.</description>
-  <iconPath>UI/Icons/Genes/SaiyanLow</iconPath>
-  <statOffsets>
-    <SR_MaxKIEnergy>500</SR_MaxKIEnergy>
-  </statOffsets>
-  <statFactors>
-    <ResearchSpeed>0.3</ResearchSpeed>
-  </statFactors>
-  <modExtensions>
-    <li Class="TaranMagicFramework.AbilityExtension">
-      <abilityClasses>
-        <li>SR_MajinClass</li>
-      </abilityClasses>
-    </li>
-  </modExtensions>
-</GeneDef>
+  <Majin.GeneDef_Majin ParentName="SR_GeneClassBase">
+    <defName>SR_MajinGene</defName>
+    <label>Majin</label>
+    <description>A Majin.</description>
+    <iconPath>UI/Icons/Genes/SaiyanLow</iconPath>
+    <skinColorBase>(255, 255, 255, 255)</skinColorBase>
+    <geneClass>Majin.Gene_Majin</geneClass>
+    <statOffsets>
+      <SR_MaxKIEnergy>200</SR_MaxKIEnergy>
+    </statOffsets>
+    <statFactors>
+      <ResearchSpeed>0.3</ResearchSpeed>
+    </statFactors>
+    <abilityUpgrades>
+      <li>
+        <requiredCount>10</requiredCount>
+        <ability>SR_SuperMajin</ability>
+      </li>
+      <li>
+        <requiredCount>20</requiredCount>
+        <ability>SR_Fission</ability>
+      </li>
+    </abilityUpgrades>
+    <maxAbsorbed>20</maxAbsorbed>
+    <modExtensions>
+      <li Class="TaranMagicFramework.AbilityExtension">
+        <abilityClasses>
+          <li>SR_MajinClass</li>
+        </abilityClasses>
+      </li>
+      <li Class="SaiyanMod.AdjustedMeleeDamageExt">
+        <adjustAmount>10</adjustAmount>
+      </li>
+      <li Class="SaiyanMod.AdjustedBodyPartHP">
+        <modifiers>
+          <li>
+            <adjustAmount>2.5</adjustAmount>
+          </li>
+        </modifiers>
+      </li>
+      <li Class="SaiyanMod.PainAdjustedMeleeDamageExt">
+        <painFactor>0.6</painFactor>
+      </li>
+    </modExtensions>
+  </Majin.GeneDef_Majin>
 </Defs>

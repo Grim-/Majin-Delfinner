@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using AbilityDef = TaranMagicFramework.AbilityDef;
+using RimWorld;
 
 namespace Majin
 {
@@ -21,50 +22,50 @@ namespace Majin
         private Color TITLE_COLOR = new Color(0.3f, 0.3f, 0.3f, 0.3f);
         private Color FOOTER_COLOR = new Color(0.3f, 0.3f, 0.3f, 0.3f);
 
+        private Pawn targetPawn;
+        private bool selectionMade = false;
+
+        private List<AbilityDef> availableFrameworkAbilities;
+        private List<RimWorld.AbilityDef> availableRimWorldAbilities;
+
+        private Action<AbilityDef> onFrameworkAbilitySelected;
+        private Action<RimWorld.AbilityDef> onRimWorldAbilitySelected;
+        private Action onCanceled;
+
         public override Vector2 InitialSize => WinSize;
 
-        private Action<AbilityDef> onAbilitySelected;
-        private Action onCanceled;
-        private Pawn targetPawn;
-        private List<AbilityDef> availableAbilities;
-
-        public Window_AbilitySelection(Pawn target, Action<AbilityDef> onAbilitySelected, Action onCanceled = null)
+        public Window_AbilitySelection(Pawn target, List<AbilityDef> frameworkAbilities, List<RimWorld.AbilityDef> rimworldAbilities, Action<AbilityDef> onFrameworkAbilitySelected, Action<RimWorld.AbilityDef> onRimWorldAbilitySelected, Action onCanceled = null)
         {
             this.targetPawn = target;
-            this.onAbilitySelected = onAbilitySelected;
+            this.availableFrameworkAbilities = frameworkAbilities ?? new List<AbilityDef>();
+            this.availableRimWorldAbilities = rimworldAbilities ?? new List<RimWorld.AbilityDef>();
+            this.onFrameworkAbilitySelected = onFrameworkAbilitySelected;
+            this.onRimWorldAbilitySelected = onRimWorldAbilitySelected;
             this.onCanceled = onCanceled;
+
             this.doCloseX = true;
             this.doCloseButton = true;
             this.absorbInputAroundWindow = true;
             this.forcePause = true;
-
-            this.availableAbilities = new List<AbilityDef>();
-            if (target.TryGetKiAbilityClass(out AbilityClassKI kiClass))
-            {
-                foreach (var ability in kiClass.LearnedAbilities)
-                {
-                    this.availableAbilities.Add(ability.def);
-                }
-            }
         }
 
         public override void DoWindowContents(Rect inRect)
         {
             DrawTitle(inRect);
 
-            float totalHeight = CalculateTotalHeight();
+            float contentY = TITLE_HEIGHT + 5f;
+            Rect contentRect = new Rect(0f, contentY, inRect.width, inRect.height - contentY - 50f);
 
-
-            Rect outRect = new Rect(0f, 40f, inRect.width, inRect.height - 40f);
-            Rect viewRect = new Rect(0f, 0f, outRect.width - 16f, totalHeight);
-
-            if (availableAbilities.Count == 0)
+            if (availableFrameworkAbilities.Count == 0 && availableRimWorldAbilities.Count == 0)
             {
-                DrawNoAbilitiesMessage(outRect);
+                DrawNoAbilitiesMessage(contentRect);
                 return;
             }
 
-            Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
+            float totalContentHeight = CalculateTotalHeight();
+            Rect viewRect = new Rect(0f, 0f, contentRect.width - 16f, totalContentHeight);
+
+            Widgets.BeginScrollView(contentRect, ref scrollPosition, viewRect);
             DrawAbilityGrid(viewRect);
             Widgets.EndScrollView();
         }
@@ -89,7 +90,11 @@ namespace Majin
 
         private float CalculateTotalHeight()
         {
-            return 40f + (Mathf.Ceil(availableAbilities.Count / (float)ABILITIES_PER_ROW) * (ABILITY_BUTTON_SIZE + BUTTON_PADDING));
+            int totalAbilities = availableFrameworkAbilities.Count + availableRimWorldAbilities.Count;
+            if (totalAbilities == 0) return 0f;
+
+            int numRows = Mathf.CeilToInt(totalAbilities / (float)ABILITIES_PER_ROW);
+            return numRows * (ABILITY_BUTTON_SIZE + BUTTON_PADDING);
         }
 
         private void DrawAbilityGrid(Rect viewRect)
@@ -97,70 +102,75 @@ namespace Majin
             float curX = 0f;
             float curY = 0f;
 
-            foreach (AbilityDef ability in availableAbilities)
+            void NextButtonPos()
             {
-                if (curX + ABILITY_BUTTON_SIZE > viewRect.width)
+                curX += ABILITY_BUTTON_SIZE + BUTTON_PADDING;
+                if (curX + ABILITY_BUTTON_SIZE > viewRect.width - INNER_PADDING)
                 {
                     curX = 0f;
                     curY += ABILITY_BUTTON_SIZE + BUTTON_PADDING;
                 }
+            };
 
+            foreach (var ability in availableFrameworkAbilities)
+            {
                 Rect buttonRect = new Rect(curX, curY, ABILITY_BUTTON_SIZE, ABILITY_BUTTON_SIZE);
-                DrawAbilityButton(buttonRect, ability);
-                curX += ABILITY_BUTTON_SIZE + BUTTON_PADDING;
+                DrawAbilityButtonInternal(buttonRect, ability.icon, ability.LabelCap, ability.description, () =>
+                {
+                    selectionMade = true;
+                    onFrameworkAbilitySelected?.Invoke(ability);
+                    Close();
+                });
+                NextButtonPos();
+            }
+
+            foreach (var ability in availableRimWorldAbilities)
+            {
+                Rect buttonRect = new Rect(curX, curY, ABILITY_BUTTON_SIZE, ABILITY_BUTTON_SIZE);
+                DrawAbilityButtonInternal(buttonRect, ability.uiIcon, ability.LabelCap, ability.description, () =>
+                {
+                    selectionMade = true;
+                    onRimWorldAbilitySelected?.Invoke(ability);
+                    Close();
+                });
+                NextButtonPos();
             }
         }
 
-        private void DrawAbilityButton(Rect buttonRect, TaranMagicFramework.AbilityDef ability)
+        private void DrawAbilityButtonInternal(Rect buttonRect, Texture2D icon, string label, string description, Action onSelect)
         {
             Widgets.DrawBox(buttonRect, 1, SolidColorMaterials.NewSolidColorTexture(Color.grey));
-
             Rect innerRect = buttonRect.ContractedBy(INNER_PADDING);
-            float labelHeight = LABEL_HEIGHT;
 
-            Rect iconRect = new Rect(
-                innerRect.x,
-                innerRect.y,
-                innerRect.width,
-                innerRect.height - labelHeight
-            );
-
-            if (!string.IsNullOrEmpty(ability.uiSkillIcon))
+            Rect iconRect = new Rect(innerRect.x, innerRect.y, innerRect.width, innerRect.height - LABEL_HEIGHT);
+            if (icon != null)
             {
-                Widgets.DrawTextureFitted(iconRect, ContentFinder<Texture2D>.Get(ability.uiSkillIcon), 0.8f);
+                Widgets.DrawTextureFitted(iconRect, icon, 0.8f);
             }
 
-            Rect footerRect = new Rect(
-                buttonRect.x,
-                buttonRect.y + buttonRect.height - labelHeight,
-                buttonRect.width,
-                labelHeight
-            );
+            Rect footerRect = new Rect(buttonRect.x, buttonRect.yMax - LABEL_HEIGHT, buttonRect.width, LABEL_HEIGHT);
             GUI.DrawTexture(footerRect, SolidColorMaterials.NewSolidColorTexture(FOOTER_COLOR));
-
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(footerRect, ability.label ?? ability.defName);
+            Widgets.Label(footerRect, label);
+            Text.Anchor = TextAnchor.UpperLeft;
 
             if (Mouse.IsOver(buttonRect))
             {
                 Widgets.DrawHighlight(buttonRect);
-                TooltipHandler.TipRegion(buttonRect, ability.description);
+                TooltipHandler.TipRegion(buttonRect, description ?? "No description.");
 
                 if (Widgets.ButtonInvisible(buttonRect))
                 {
-                    onAbilitySelected?.Invoke(ability);
-                    Close();
+                    onSelect?.Invoke();
                 }
             }
-
-            Text.Anchor = TextAnchor.UpperLeft;
         }
 
         public override void PostClose()
         {
             base.PostClose();
-            if (!Find.WindowStack.Windows.Contains(this))
+            if (!selectionMade)
             {
                 onCanceled?.Invoke();
             }

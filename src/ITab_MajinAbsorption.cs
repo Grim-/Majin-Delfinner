@@ -13,6 +13,9 @@ namespace Majin
         private const float BUTTON_WIDTH = 220f;
         private const float COLUMN_SPACING = 5f;
 
+        public override bool IsVisible => base.IsVisible && this.SelPawn != null && this.SelPawn.genes != null &&
+            this.SelPawn.genes.GetFirstGeneOfType<Gene_Majin>() != null;
+
         public ITab_MajinAbsorption()
         {
             this.labelKey = "TabMajinAbsorption";
@@ -25,8 +28,9 @@ namespace Majin
             Rect rect = new Rect(0f, 0f, this.size.x, this.size.y).ContractedBy(10f);
             Rect viewRect = new Rect(0f, 0f, rect.width - 16f, 1000f);
             Pawn pawn = (Pawn)this.SelPawn;
-            Hediff_MajinAbsorbption majinAbsorption = pawn.health.hediffSet.GetFirstHediffOfDef(MajinDefOf.SR_AbsorptionHediff) as Hediff_MajinAbsorbption;
-            if (majinAbsorption == null) return;
+            Gene_Majin majinAbsorption = pawn.genes.GetFirstGeneOfType<Gene_Majin>();
+            if (majinAbsorption == null) 
+                return;
 
             Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
             Listing_Standard listingStandard = new Listing_Standard();
@@ -34,13 +38,12 @@ namespace Majin
 
             if (pawn != null && majinAbsorption != null)
             {
-                var absorbedPawns = majinAbsorption.AbsorbedPawns;
-                if (absorbedPawns != null)
+                if (majinAbsorption.AbsorbedPawns != null)
                 {
-                    listingStandard.Label($"Total Absorbed Beings: {absorbedPawns.Count}");
+                    listingStandard.Label($"Total Absorbed Beings: {majinAbsorption.AbsorbedPawns.Count}");
                     listingStandard.GapLine();
 
-                    if (absorbedPawns.Count > 0)
+                    if (majinAbsorption.AbsorbedPawns.Count > 0)
                     {
                         if (listingStandard.ButtonText("Release All"))
                         {
@@ -49,8 +52,13 @@ namespace Majin
                         listingStandard.GapLine();
                     }
 
-                    foreach (var absorbedPawn in absorbedPawns)
+                    foreach (var absorbedPawn in majinAbsorption.AbsorbedPawns.ToArray())
                     {
+                        if (absorbedPawn == null)
+                        {
+                            continue;
+                        }
+
                         DrawRow(pawn, majinAbsorption, absorbedPawn, listingStandard);
                     }
                 }
@@ -68,7 +76,7 @@ namespace Majin
             Widgets.EndScrollView();
         }
 
-        private void DrawRow(Pawn pawn, Hediff_MajinAbsorbption majinAbsorption, Pawn absorbedPawn, Listing_Standard listingStandard)
+        private void DrawRow(Pawn pawn, Gene_Majin majinAbsorption, Pawn absorbedPawn, Listing_Standard listingStandard)
         {
             Rect rowRect = listingStandard.GetRect(ROW_HEIGHT);
             var layout = new RowLayoutManager(rowRect);
@@ -91,7 +99,5 @@ namespace Majin
             }
         }
 
-        public override bool IsVisible => base.IsVisible && this.SelPawn != null &&
-            this.SelPawn.health.hediffSet.GetFirstHediffOfDef(MajinDefOf.SR_AbsorptionHediff) != null;
     }
 }

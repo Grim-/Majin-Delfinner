@@ -15,21 +15,36 @@
 		<abilityRank>SR_LightPassiveRank</abilityRank>
 		<abilityClass>SaiyanMod.KIAbilityPassive</abilityClass>
 		<showMastered>false</showMastered>
+    <abilityTrees>
+      <li>SR_MajinAbilityTree</li>
+    </abilityTrees>
 	</TaranMagicFramework.AbilityDef>
 
 	<TaranMagicFramework.AbilityDef Name="SR_BasicMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
 		<abilityRank>SR_BasicRank</abilityRank>
+    <abilityTrees>
+      <li>SR_MajinAbilityTree</li>
+    </abilityTrees>
 	</TaranMagicFramework.AbilityDef>
 
 	<TaranMagicFramework.AbilityDef Name="SR_PassiveMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
 		<abilityRank>SR_PassiveRank</abilityRank>
+    <abilityTrees>
+      <li>SR_MajinAbilityTree</li>
+    </abilityTrees>
 	</TaranMagicFramework.AbilityDef>
 
 	<TaranMagicFramework.AbilityDef Name="SR_AdvancedMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
 		<abilityRank>SR_AdvancedRank</abilityRank>
+    <abilityTrees>
+      <li>SR_MajinAbilityTree</li>
+    </abilityTrees>
 	</TaranMagicFramework.AbilityDef>
 
 	<TaranMagicFramework.AbilityDef Name="SR_SuperMajinKISkill" ParentName="SR_MajinAbilityTree" Abstract="True">
 		<abilityRank>SR_SuperSaiyan</abilityRank>
+    <abilityTrees>
+      <li>SR_MajinAbilityTree</li>
+    </abilityTrees>
 	</TaranMagicFramework.AbilityDef>
 </Defs>
